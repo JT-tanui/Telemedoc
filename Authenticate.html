@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div id="signin-form" class="bg-white shadow-md rounded-lg overflow-hidden w-full max-w-2xl">
+        <div class="bg-gray-900 p-6 flex items-center justify-center">
+            <img alt="Doxy.me logo" class="h-10" src="https://placehold.co/40x40"/>
+            <span class="text-white text-2xl ml-2"> <a href="/index.html">Teledoc</a></span>
+        </div>
+        <div class="p-6 flex">
+            <div class="w-2/3 pr-4">
+                <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
+                <form>
+                    <div class="mb-4">
+                        <input id="email" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Email" type="email"/>
+                    </div>
+                    <div class="mb-4 relative">
+                        <input id="password" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Password" type="password"/>
+                        <i id="togglePassword" class="fas fa-eye absolute right-3 top-3 text-gray-500 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <input class="mr-2" id="remember" type="checkbox"/>
+                        <label class="text-gray-600" for="remember">Remember me on this computer</label>
+                    </div>
+                    <div class="mb-4">
+                        <button class="bg-teal-500 text-white px-4 py-2 rounded-md w-full hover:bg-teal-600" type="submit">Sign In</button>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-teal-500 hover:underline" href="#" id="show-signup">Don't have an account? Sign Up</a>
+                    </div>
+                </form>
+            </div>
+            <div class="w-1/3 flex flex-col justify-center items-center">
+                <button class="bg-red-500 text-white px-4 py-2 rounded-md w-full mb-4 hover:bg-red-600 flex items-center justify-center" type="button">
+                    <i class="fab fa-google mr-2"></i>Login with Google
+                </button>
+                <button class="bg-blue-700 text-white px-4 py-2 rounded-md w-full hover:bg-blue-800 flex items-center justify-center" type="button">
+                    <i class="fab fa-linkedin mr-2"></i>Login with LinkedIn
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="signup-form" class="bg-white shadow-md rounded-lg overflow-hidden w-full max-w-2xl hidden">
+        <div class="bg-gray-900 p-6 flex items-center justify-center">
+            <img alt="Doxy.me logo" class="h-10" src="https://placehold.co/40x40"/>
+            <span class="text-white text-2xl ml-2"><a href="/index.html">Teledoc</a></span>
+        </div>
+        <div class="p-6 flex">
+            <div class="w-2/3 pr-4">
+                <h2 class="text-2xl font-semibold mb-4">Sign Up</h2>
+                <form>
+                    <div class="mb-4">
+                        <input id="signup-email" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Email" type="email"/>
+                    </div>
+                    <div class="mb-4 relative">
+                        <input id="signup-password" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Password" type="password"/>
+                        <i id="toggleSignupPassword" class="fas fa-eye absolute right-3 top-3 text-gray-500 cursor-pointer"></i>
+                    </div>
+                    <div class="mb-4 relative">
+                        <input id="confirmPassword" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Confirm Password" type="password"/>
+                        <i id="toggleConfirmPassword" class="fas fa-eye absolute right-3 top-3 text-gray-500 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <input class="mr-2" id="terms" type="checkbox"/>
+                        <label class="text-gray-600" for="terms">I agree to the terms and conditions</label>
+                    </div>
+                    <div class="mb-4">
+                        <button class="bg-teal-500 text-white px-4 py-2 rounded-md w-full hover:bg-teal-600" type="submit">Sign Up</button>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-teal-500 hover:underline" href="#" id="show-signin">Already have an account? Sign In</a>
+                    </div>
+                </form>
+            </div>
+            <div class="w-1/3 flex flex-col justify-center items-center">
+                <button class="bg-red-500 text-white px-4 py-2 rounded-md w-full mb-4 hover:bg-red-600 flex items-center justify-center" type="button">
+                    <i class="fab fa-google mr-2"></i>Sign Up with Google
+                </button>
+                <button class="bg-blue-700 text-white px-4 py-2 rounded-md w-full hover:bg-blue-800 flex items-center justify-center" type="button">
+                    <i class="fab fa-linkedin mr-2"></i>Sign Up with LinkedIn
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
