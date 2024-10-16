@@ -1,0 +1,25 @@
+{
+  "name": "telemedicine-app",
+  "version": "1.0.0",
+  "description": "Telemedicine application backend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-mysql-session": "^3.0.3",
+    "express-session": "^1.17.1",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.37.4",
+    "sequelize-cli": "^6.6.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

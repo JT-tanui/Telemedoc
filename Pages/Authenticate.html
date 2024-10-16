@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div id="signin-form" class="bg-white shadow-md rounded-lg overflow-hidden w-full max-w-2xl">
+        <div class="bg-gray-900 p-6 flex items-center justify-center">
+            <img alt="Doxy.me logo" class="h-10" src="https://placehold.co/40x40"/>
+            <span class="text-white text-2xl ml-2"><a href="../index.html">Teledoxs</a></span>
+        </div>
+        <div class="p-6 flex">
+            <div class="w-2/3 pr-4">
+                <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
+                <form id="signinForm">
+                    <div class="mb-4">
+                        <input id="email" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Email" type="email"/>
+                    </div>
+                    <div class="mb-4 relative">
+                        <input id="password" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Password" type="password"/>
+                        <i id="togglePassword" class="fas fa-eye absolute right-3 top-3 text-gray-500 cursor-pointer"></i>
+                    </div>
+                    <div class="mb-4">
+                        <select id="role" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <input class="mr-2" id="remember" type="checkbox"/>
+                        <label class="text-gray-600" for="remember">Remember me on this computer</label>
+                    </div>
+                    <div class="mb-4">
+                        <button class="bg-teal-500 text-white px-4 py-2 rounded-md w-full hover:bg-teal-600" type="submit">Sign In</button>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-teal-500 hover:underline" href="#" id="show-signup">Don't have an account? Sign Up</a>
+                    </div>
+                </form>
+            </div>
+            <div class="w-1/3 flex flex-col justify-center items-center">
+                <button class="bg-red-500 text-white px-4 py-2 rounded-md w-full mb-4 hover:bg-red-600 flex items-center justify-center" type="button">
+                    <i class="fab fa-google mr-2"></i>Login with Google
+                </button>
+                <button class="bg-blue-700 text-white px-4 py-2 rounded-md w-full hover:bg-blue-800 flex items-center justify-center" type="button">
+                    <i class="fab fa-linkedin mr-2"></i>Login with LinkedIn
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="signup-form" class="bg-white shadow-md rounded-lg overflow-hidden w-full max-w-2xl hidden">
+        <div class="bg-gray-900 p-6 flex items-center justify-center">
+            <img alt="Doxy.me logo" class="h-10" src="https://placehold.co/40x40"/>
+            <span class="text-white text-2xl ml-2"><a href="../index.html">Teledoxs</a></span>
+        </div>
+        <div class="p-6 flex">
+            <div class="w-2/3 pr-4">
+                <h2 class="text-2xl font-semibold mb-4">Sign Up</h2>
+                <form id="signupForm">
+                    <div class="mb-4">
+                        <input id="first-name" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="First Name" type="text" required/>
+                    </div>
+                    <div class="mb-4">
+                        <input id="last-name" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Last Name" type="text" required/>
+                    </div>
+                    <div class="mb-4">
+                        <input id="signup-email" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Email" type="email" required/>
+                    </div>
+                    <div class="mb-4 relative">
+                        <input id="signup-password" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Password" type="password" required/>
+                        <i id="toggleSignupPassword" class="fas fa-eye absolute right-3 top-3 text-gray-500 cursor-pointer"></i>
+                    </div>
+                    <div class="mb-4 relative">
+                        <input id="confirmPassword" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Confirm Password" type="password" required/>
+                        <i id="toggleConfirmPassword" class="fas fa-eye absolute right-3 top-3 text-gray-500 cursor-pointer"></i>
+                    </div>
+                    <div class="mb-4">
+                        <select id="signup-role" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div id="additional-fields"></div>
+                    <div class="flex items-center mb-4">
+                        <input class="mr-2" id="terms" type="checkbox" required/>
+                        <label class="text-gray-600" for="terms">I agree to the terms and conditions</label>
+                    </div>
+                    <div class="mb-4">
+                        <button class="bg-teal-500 text-white px-4 py-2 rounded-md w-full hover:bg-teal-600" type="submit">Sign Up</button>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-teal-500 hover:underline" href="#" id="show-signin">Already have an account? Sign In</a>
+                    </div>
+                </form>
+            </div>
+            <div class="w-1/3 flex flex-col justify-center items-center">
+                <button class="bg-red-500 text-white px-4 py-2 rounded-md w-full mb-4 hover:bg-red-600 flex items-center justify-center" type="button">
+                    <i class="fab fa-google mr-2"></i>Sign Up with Google
+                </button>
+                <button class="bg-blue-700 text-white px-4 py-2 rounded-md w-full hover:bg-blue-800 flex items-center justify-center" type="button">
+                    <i class="fab fa-linkedin mr-2"></i>Sign Up with LinkedIn
+                </button>
+            </div>
+        </div>
+    </div>
+        <script>
+        // Toggle between Sign In and Sign Up forms
+        document.getElementById('show-signup').addEventListener('click', function() {
+            document.getElementById('signin-form').classList.add('hidden');
+            document.getElementById('signup-form').classList.remove('hidden');
+        });
+    
+        document.getElementById('show-signin').addEventListener('click', function() {
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById('signin-form').classList.remove('hidden');
+        });
+    
+        // Toggle Password visibility for Sign In form
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    
+        // Toggle Password visibility for Sign Up form
+        document.getElementById('toggleSignupPassword').addEventListener('click', function() {
+            const password = document.getElementById('signup-password');
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    
+        document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+            const password = document.getElementById('confirmPassword');
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    
+         // Handle Sign In form submission
+         document.getElementById('signinForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const role = document.getElementById('role').value;
+
+            // Basic validation
+            if (!email || !password || !role) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Create a data object with the credentials
+            const data = {
+                email: email,
+                password: password,
+                role: role
+            };
+
+            // Send data to the server for validation
+            fetch('http://127.0.0.1:3200/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data) // Convert data to JSON format
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Server response:', result); // Debugging: Log the server response
+                if (result.success) {
+                    // Redirect based on the redirectUrl from the server response
+                    window.location.href = result.redirectUrl;
+                } else {
+                    // Handle errors such as incorrect email or password
+                    alert(result.message || 'Login failed. Please check your credentials.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred during login. Please try again later.');
+            });
+        });
+    
+        // Dynamic form fields based on role in Sign Up form
+        document.getElementById('signup-role').addEventListener('change', function() {
+            const role = this.value;
+            const additionalFields = document.getElementById('additional-fields');
+            additionalFields.innerHTML = '';
+    
+            if (role === 'patient') {
+                additionalFields.innerHTML = `
+                    <div class="mb-4">
+                        <input id="phone" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Phone" type="text"/>
+                    </div>
+                    <div class="mb-4">
+                        <input id="date-of-birth" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Date of Birth" type="date"/>
+                    </div>
+                    <div class="mb-4">
+                        <select id="gender" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <textarea id="address" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Address"></textarea>
+                    </div>
+                `;
+            } else if (role === 'doctor') {
+                additionalFields.innerHTML = `
+                    <div class="mb-4">
+                        <input id="specialization" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Specialization" type="text"/>
+                    </div>
+                    <div class="mb-4">
+                        <input id="phone" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Phone" type="text"/>
+                    </div>
+                    <div class="mb-4">
+                        <textarea id="schedule" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Schedule"></textarea>
+                    </div>
+                `;
+            } else if (role === 'admin') {
+                additionalFields.innerHTML = `
+                    <div class="mb-4">
+                        <input id="username" class="w-full px-3 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Username" type="text" required/>
+                    </div>
+                `;
+            }
+        });
+    
+        // Handle Sign Up form submission
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const role = document.getElementById('signup-role').value;
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+        
+            // Basic validation
+            if (!firstName || !lastName || !email || !password || !role) {
+                alert('Please fill in all fields.');
+                return;
+            }
+        
+            let data = {
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                password: password,
+                role: role
+            };
+        
+            if (role === 'patient') {
+                data.phone = document.getElementById('phone').value;
+                data.date_of_birth = document.getElementById('date-of-birth').value;
+                data.gender = document.getElementById('gender').value;
+                data.address = document.getElementById('address').value;
+            } else if (role === 'doctor') {
+                data.specialization = document.getElementById('specialization').value;
+                data.phone = document.getElementById('phone').value;
+                data.schedule = document.getElementById('schedule').value;
+            } else if (role === 'admin') {
+                data.username = document.getElementById('username').value;
+            }
+        
+            console.log('Data to be sent:', data); // Debugging: Log the data being sent
+        
+            fetch('http://127.0.0.1:3200/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Server response:', result); // Debugging: Log the server response
+                if (result.success) {
+                    // Redirect based on the redirectUrl from the server response
+                    window.location.href = result.redirectUrl;
+                } else {
+                    alert(result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred during registration. Please try again later.');
+            });
+        });
+    </script>
+</body>
+</html>
